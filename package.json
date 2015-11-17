@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/karissa/random-graph/issues"
   },
-  "homepage": "https://github.com/karissa/random-graph#readme"
+  "homepage": "https://github.com/karissa/random-graph#readme",
+  "dependencies": {
+    "readable-stream": "^2.0.4"
+  }
 }
