@@ -52,13 +52,12 @@ util.inherits(DAGStream, stream.Readable)
 DAGStream.prototype._read = function () {
   var self = this
   if (self._i >= self.ranks) return self._end()
-  self._i += 1
   var new_nodes = random.integer(self.min_per_rank, self.max_per_rank)(self.engine)
-  addRank()
   self.nodes += new_nodes
-
+  var pushed = 0
+  self._i += 1
+  addRank()
   function addRank () {
-    var pushed = 0
     for (var j = 0; j < self.nodes; j++) {
       for (var k = 0; k < new_nodes; k++) {
         var rand = random.real(0, 1)(self.engine)
