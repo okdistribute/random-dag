@@ -20,7 +20,8 @@ var opts = {
   probability: 0.3 // chance of having an edge
 }
 var stream = dag.stream(opts)
-stream.on('data', function (data) {
+stream.on('data', function (edge) {
+  // e.g, an edge from node with index '0' and index '1'.
   // {from: 0, to: 1}
 })
 ```
