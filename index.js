@@ -1,4 +1,3 @@
-
 module.exports = {
   ErdosReyni: require('./lib/erdos.js'),
   DAG: require('./lib/dag.js'),

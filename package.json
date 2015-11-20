@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/karissa/random-graph#readme",
   "dependencies": {
+    "random-js": "^1.0.8",
     "readable-stream": "^2.0.4"
   }
 }

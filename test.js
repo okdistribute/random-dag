@@ -3,12 +3,10 @@ var Random = require('./')
 
 test('generate node function works', function (t) {
   var opts = {limit: 10}
-  var stream = Random(opts, function () {
-    return {index: this._i}
-  })
+  var stream = Random.DAG(opts)
 
   stream.on('data', function (data) {
-    t.equal((typeof data.index), 'number')
+    console.log(data)
   })
 
   stream.on('error', function (err) {
