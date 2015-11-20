@@ -1,12 +1,12 @@
 var test = require('tape')
-var Random = require('./')
+var dag = require('./')
 
-test('generate node function works', function (t) {
-  var opts = {limit: 10}
-  var stream = Random.DAG(opts)
+test('basic dag generation', function (t) {
+  var stream = dag()
 
   stream.on('data', function (data) {
-    console.log(data)
+    t.ok(data.from)
+    t.ok(data.to)
   })
 
   stream.on('error', function (err) {

@@ -1,24 +1,24 @@
 {
-  "name": "random-graph",
+  "name": "random-dag",
   "version": "1.0.0",
-  "description": "generate random graph data for testing",
+  "description": "Generate random DAG for testing",
   "main": "index.js",
   "scripts": {
     "test": "node test.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/karissa/random-graph.git"
+    "url": "git+https://github.com/karissa/random-dag.git"
   },
   "keywords": [
-    "graph"
+    "graph", "DAG", "directed acyclic graph", "random"
   ],
   "author": "Karissa McKelvey <karissa@karissamck.com> (http://karissamck.com/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/karissa/random-graph/issues"
+    "url": "https://github.com/karissa/random-dag/issues"
   },
-  "homepage": "https://github.com/karissa/random-graph#readme",
+  "homepage": "https://github.com/karissa/random-dag#readme",
   "dependencies": {
     "random-js": "^1.0.8",
     "readable-stream": "^2.0.4"
