@@ -11,7 +11,10 @@
     "url": "git+https://github.com/karissa/random-dag.git"
   },
   "keywords": [
-    "graph", "DAG", "directed acyclic graph", "random"
+    "graph",
+    "DAG",
+    "directed acyclic graph",
+    "random"
   ],
   "author": "Karissa McKelvey <karissa@karissamck.com> (http://karissamck.com/)",
   "license": "MIT",
@@ -20,6 +23,7 @@
   },
   "homepage": "https://github.com/karissa/random-dag#readme",
   "dependencies": {
+    "graphlib": "^1.0.7",
     "random-js": "^1.0.8",
     "readable-stream": "^2.0.4"
   }
