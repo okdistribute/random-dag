@@ -1,11 +1,12 @@
 # random-dag
-[![NPM](https://nodei.co/npm/random-graph.png)](https://nodei.co/npm/random-graph/)
 
-Create a random Directed Acyclic Graph as a stream or as a `graphlib` graph.
+Create a random Directed Acyclic Graph as a stream or as a `graphlib` object.
 
 ```npm install random-dag```
 
-## Node.js streams
+## API
+
+### `dag.stream(opts)`
 
 ```js
 var dag = require('random-dag')
@@ -22,7 +23,7 @@ stream.on('data', function (data) {
 })
 ```
 
-## `dag.graphlib(opts, cb)`
+### `dag.graphlib(opts, cb)`
 
 Can provide optional options as a first argument, same as above stream.
 
