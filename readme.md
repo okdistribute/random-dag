@@ -53,6 +53,6 @@ dag.graphlib(function (err, g) {
 })
 ```
 
-### Credits
+## License
 
-Reimplementation of [this stackoverflow post](http://stackoverflow.com/questions/12790337/generating-a-random-dag) in Node.js
+MIT
