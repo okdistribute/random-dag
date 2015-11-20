@@ -34,3 +34,8 @@ dag.graphlib(function (err, g) {
   // g is a graphlib.Graph object
   console.log(graphlib.alg.isAcyclic(g)) // true
 })
+```
+
+### Credits
+
+Reimplementation of [this stackoverflow post](http://stackoverflow.com/questions/12790337/generating-a-random-dag) in Node.js
