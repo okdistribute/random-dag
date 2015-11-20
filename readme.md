@@ -6,11 +6,18 @@ Create a random Directed Acyclic Graph as a stream or as a `graphlib` object.
 
 [![build status](http://img.shields.io/travis/karissa/random-dag.svg?style=flat)](http://travis-ci.org/karissa/random-dag)
 
-## CLi
+## CLI
 
 ```
 $ npm install -g random-dag
 $ random-dag --max_per_rank=5 --max_ranks=100 --probability=.5
+{ from: 0, to: 3 }
+{ from: 0, to: 4 }
+{ from: 2, to: 3 }
+{ from: 2, to: 4 }
+{ from: 2, to: 10 }
+{ from: 2, to: 11 }
+etc...
 ```
 
 ## API
