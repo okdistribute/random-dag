@@ -32,33 +32,44 @@ function DAGStream (opts) {
     - max_ranks (int)
     - probability (float): chance of having an edge
   **/
-  if (!(this instanceof DAGStream)) return new DAGStream(opts)
+  var self = this
+  if (!(self instanceof DAGStream)) return new DAGStream(opts)
   opts = opts || {}
-  this.min_per_rank = opts.min_per_rank || 1
-  this.max_per_rank = opts.max_per_rank || 5
-  this.probability = opts.probability || 0.3
-  this.engine = opts.engine || random.engines.nativeMath
-  this.ranks = random.integer(opts.min_ranks || 3, opts.max_ranks || 5)(this.engine)
+  self.min_per_rank = opts.min_per_rank || 1
+  self.max_per_rank = opts.max_per_rank || 5
+  self.probability = opts.probability || 0.3
+  self.engine = opts.engine || random.engines.nativeMath
+  self.ranks = random.integer(opts.min_ranks || 3, opts.max_ranks || 5)(self.engine)
 
-  this._i = 0
-  this.nodes = 1
+  self._i = 0
+  self.nodes = 1
 
-  stream.Readable.call(this, {objectMode: true, highWaterMark: 16})
+  stream.Readable.call(self, {objectMode: true, highWaterMark: 16})
 }
 
 util.inherits(DAGStream, stream.Readable)
 
 DAGStream.prototype._read = function () {
-  if (this._i >= this.ranks) return this._end()
-  var new_nodes = random.integer(this.min_per_rank, this.max_per_rank)(this.engine)
-  for (var j = 0; j < this.nodes; j++) {
-    for (var k = 0; k < new_nodes; k++) {
-      var rand = random.real(0, 1)(this.engine)
-      if (rand < this.probability) this.push({from: j, to: k + this.nodes})
+  var self = this
+  if (self._i >= self.ranks) return self._end()
+  self._i += 1
+  var new_nodes = random.integer(self.min_per_rank, self.max_per_rank)(self.engine)
+  addRank()
+  self.nodes += new_nodes
+
+  function addRank () {
+    var pushed = 0
+    for (var j = 0; j < self.nodes; j++) {
+      for (var k = 0; k < new_nodes; k++) {
+        var rand = random.real(0, 1)(self.engine)
+        if (rand < self.probability) {
+          pushed += 1
+          self.push({from: j, to: k + self.nodes})
+        }
+      }
     }
+    if (pushed < self.min_per_rank) addRank()
   }
-  this.nodes += new_nodes
-  this._i += 1
 }
 
 DAGStream.prototype._end = function () {
