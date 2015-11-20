@@ -4,6 +4,8 @@ Create a random Directed Acyclic Graph as a stream or as a `graphlib` object.
 
 ```npm install random-dag```
 
+[![build status](http://img.shields.io/travis/karissa/random-dag.svg?style=flat)](http://travis-ci.org/karissa/random-dag)
+
 ## API
 
 ### `dag.stream(opts)`
