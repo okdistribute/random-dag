@@ -1,6 +1,6 @@
 {
   "name": "random-dag",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Generate random DAG for testing",
   "main": "index.js",
   "scripts": {
